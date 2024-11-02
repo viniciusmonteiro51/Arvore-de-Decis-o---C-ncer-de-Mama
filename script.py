@@ -46,3 +46,6 @@ if st.sidebar.button("Treinar Modelo"):
         plt.close()
     else:
         st.sidebar.write("Por favor, selecione pelo menos um atributo para treinar o modelo.")
+
+st.sidebar.title('Classificar Novo Registro')
+st.sidebar.write("Selecione os atributos para classificação:")
