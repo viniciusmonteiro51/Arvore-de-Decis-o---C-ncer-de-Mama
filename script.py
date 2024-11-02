@@ -6,20 +6,16 @@ import matplotlib.pyplot as plt
 from sklearn.tree import plot_tree
 import streamlit as st
 
-# Carregar os dados
 df = pd.read_csv('cancer_mama.csv')
 
-# Preparar os dados
-df_data = df.drop(['diagnosis'], axis=1)  # Excluir a coluna 'diagnosis' do DataFrame de dados
-df_target = df['diagnosis'].map({'M': 1, 'B': 0})  # Mapear as classes para valores binários
+df_data = df.drop(['diagnosis'], axis=1)
+df_target = df['diagnosis'].map({'M': 1, 'B': 0})
 
 x = df_data
 y = df_target
 
-# Dividir os dados em conjuntos de treino e teste
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 
-# Configuração da interface Streamlit
 st.sidebar.title('Escolha os Atributos')
 st.sidebar.write("Selecione os atributos para classificação:")
 
